@@ -37,7 +37,7 @@ Buy bus tickets using voice recognition
 ---
 ## Development setup
 
-Requirements
+Install requirements.
 
     # install poetry package manager
     pip install poetry
@@ -47,6 +47,14 @@ Requirements
 
     # install pre-commit hooks for code quality assurance
     pre-commit install
+
+Create the .env file and supply your own secrets and configuration.
+
+    # create .env file
+    cp backend/.env.example backend/.env
+
+
+
 ---
 ## Poetry
 Here are some helpful poetry commands in case you need to alter the dependencies.

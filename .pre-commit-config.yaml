@@ -26,7 +26,6 @@ repos:
     rev: "22.3.0"
     hooks:
     -   id: black
-        exclude: ^.*\b(migrations)\b.*$
         args: [
             --config=./backend/pyproject.toml
         ]

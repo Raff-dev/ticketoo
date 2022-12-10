@@ -15,3 +15,5 @@ services:
     restart: always
     volumes:
       - "./backend:/app"
+    env_file:
+      - ./backend/.env
