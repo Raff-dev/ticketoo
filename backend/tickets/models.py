@@ -2,6 +2,7 @@ from django.db import models
 
 REDUCED_MODIFIER = 0.5
 
+
 class Ticket(models.Model):
     duration = models.IntegerField()
     zone = models.CharField(max_length=255)

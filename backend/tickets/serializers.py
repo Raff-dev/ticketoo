@@ -1,4 +1,5 @@
 from rest_framework import serializers
+
 from tickets.models import Ticket, TicketSale
 
 
@@ -8,6 +9,7 @@ class TicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
         fields = "__all__"
+
 
 class TicketSaleSerializer(serializers.ModelSerializer):
     total_price = serializers.ReadOnlyField()

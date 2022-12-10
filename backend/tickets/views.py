@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+
 from tickets.models import Ticket, TicketSale
 from tickets.serializers import TicketSaleSerializer, TicketSerializer
 
@@ -8,6 +9,7 @@ from tickets.serializers import TicketSaleSerializer, TicketSerializer
 class TicketViewSet(viewsets.ModelViewSet):
     queryset = Ticket.objects.all()
     serializer_class = TicketSerializer
+
 
 class TicketSaleViewSet(viewsets.ModelViewSet):
     queryset = TicketSale.objects.all()

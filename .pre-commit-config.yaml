@@ -1,0 +1,41 @@
+files: backend
+repos:
+-   repo: https://github.com/myint/autoflake
+    rev: "v1.4"
+    hooks:
+    -   id: autoflake
+        args: [
+            '--remove-all-unused-imports',
+            '--remove-unused-variables',
+            '--in-place',
+            '--ignore-init-module-imports',
+            '--recursive', '.'
+        ]
+
+-   repo: https://github.com/MarcoGorelli/absolufy-imports
+    rev: v0.3.1
+    hooks:
+    -   id: absolufy-imports
+
+-   repo: https://github.com/timothycrosley/isort
+    rev: "5.6.4"
+    hooks:
+    -   id: isort
+
+-   repo: https://github.com/psf/black
+    rev: "22.3.0"
+    hooks:
+    -   id: black
+        exclude: ^.*\b(migrations)\b.*$
+        args: [
+            --config=./backend/pyproject.toml
+        ]
+
+-   repo: local
+    hooks:
+    -   id: pylint
+        verbose: true
+        name: pylint
+        entry: pylint -rn -sn --rcfile=./backend/pyproject.toml
+        language: system
+        types: [python]

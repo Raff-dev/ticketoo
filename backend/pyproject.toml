@@ -9,8 +9,41 @@ readme = "README.md"
 python = "^3.10"
 django = "^4.1.4"
 djangorestframework = "^3.14.0"
+pre-commit = "^2.20.0"
+pylint = "^2.15.8"
+black = "^22.12.0"
+isort = "^5.10.1"
+absolufy-imports = "^0.3.1"
+autoflake = "^2.0.0"
+pylint-django = "^2.5.3"
+pylint-plugin-utils = "^0.7"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.black]
+line_length = 100
+exclude = '''
+/(
+  | migrations
+)/
+
+'''
+
+[tool.pylint.messages_control]
+disable = [
+    "missing-module-docstring",
+    "missing-class-docstring",
+    "missing-function-docstring",
+    "too-few-public-methods",
+    "too-many-ancestors",
+    "no-member",
+]
+ignore-paths=".*/migrations"
