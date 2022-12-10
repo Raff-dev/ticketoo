@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  react:
+    build: frontend
+    ports:
+      - "3000:3000"
+    restart: always
+    volumes:
+      - "./frontend:/app"
+
+  django:
+    build: backend
+    ports:
+      - "8000:8000"
+    restart: always
+    volumes:
+      - "./backend:/app"
