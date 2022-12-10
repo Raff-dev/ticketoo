@@ -8,9 +8,14 @@ class Ticket(models.Model):
     zone = models.CharField(max_length=255)
     price = models.IntegerField()
 
+    class Meta:
+        unique_together = ["duration", "zone", "price"]
+
     @property
     def reduced_price(self):
-        return self.price * REDUCED_MODIFIER
+        if self.price:
+            return self.price * REDUCED_MODIFIER
+        return None
 
 
 class TicketSale(models.Model):

@@ -17,6 +17,7 @@ absolufy-imports = "^0.3.1"
 autoflake = "^2.0.0"
 pylint-django = "^2.5.3"
 pylint-plugin-utils = "^0.7"
+django-cors-headers = "^3.13.0"
 
 
 [build-system]
@@ -30,20 +31,23 @@ line_length = 100
 
 [tool.black]
 line_length = 100
-exclude = '''
+force-exclude = '''
 /(
-  | migrations
+    | migrations
 )/
-
 '''
+
+[tool.pylint.MASTER]
+load-plugins = [
+    "pylint_django"
+]
 
 [tool.pylint.messages_control]
 disable = [
     "missing-module-docstring",
     "missing-class-docstring",
     "missing-function-docstring",
-    "too-few-public-methods",
     "too-many-ancestors",
-    "no-member",
+    "django-not-configured",
 ]
 ignore-paths=".*/migrations"
