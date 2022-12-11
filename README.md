@@ -25,6 +25,13 @@ Buy bus tickets using voice recognition
 
 ## Run the application
 
+Create the .env file and supply your own secrets and configuration.
+
+Then, simply compose up.
+
+    # create .env file
+    cp backend/.env.example backend/.env
+
     docker compose up
 
 ## Acces the application locally
@@ -47,13 +54,6 @@ Install requirements.
 
     # install pre-commit hooks for code quality assurance
     pre-commit install
-
-Create the .env file and supply your own secrets and configuration.
-
-    # create .env file
-    cp backend/.env.example backend/.env
-
-
 
 ---
 ## Poetry
