@@ -1,3 +1,4 @@
+
 [tool.poetry]
 name = "backend"
 version = "0.1.0"
@@ -19,11 +20,16 @@ pylint-django = "^2.5.3"
 pylint-plugin-utils = "^0.7"
 django-cors-headers = "^3.13.0"
 
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.autoflake]
+remove-all-unused-imports = true
+remove-unused-variables = true
+in-place = true
+ignore-init-module-imports = true
+exclude = "**/migrations/*"
 
 [tool.isort]
 profile = "black"

@@ -4,13 +4,6 @@ repos:
     rev: "v1.4"
     hooks:
     -   id: autoflake
-        args: [
-            '--remove-all-unused-imports',
-            '--remove-unused-variables',
-            '--in-place',
-            '--ignore-init-module-imports',
-            '--recursive', '.'
-        ]
 
 -   repo: https://github.com/MarcoGorelli/absolufy-imports
     rev: v0.3.1
