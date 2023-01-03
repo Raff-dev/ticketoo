@@ -74,6 +74,6 @@ Here are some helpful poetry commands in case you need to alter the dependencies
 
 ## Django commands
 
-    docker-compose run backend python manage.py {your_command} {your_args}
+    docker compose run backend python manage.py {your_command} {your_args}
 ---
 
