@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Updating dependencies"
-poetry install --no-dev
+poetry install --only main
 
 # configure static files before uncommenting it
 # echo "Collect static files"
