@@ -1,33 +1,9 @@
 # Ticketoo
 Buy bus tickets using voice recognition
 
----
-- [Ticketoo](#ticketoo)
-  - [Tech stack](#tech-stack)
-  - [Run the application](#run-the-application)
-  - [Acces the application locally](#acces-the-application-locally)
-  - [Development setup](#development-setup)
-  - [Poetry](#poetry)
-  - [Pre-commit](#pre-commit)
-  - [Django commands](#django-commands)
-
-
----
-
-## Tech stack
-
--   Backend - [Django](https://www.djangoproject.com/) + [DRF](https://www.django-rest-framework.org/)
--   Frontend - [React](https://reactjs.org/)
--   Dependency management - [Poetry](https://python-poetry.org/)
--   Containerization - [Docker](https://www.docker.com/)
-
----
-
 ## Run the application
 
-Create the .env file and supply your own secrets and configuration.
-
-Then, simply compose up.
+Create the .env file and supply your own secrets and configuration, then simply compose up.
 
     # create .env file
     cp backend/.env.example backend/.env
@@ -40,37 +16,16 @@ Then, simply compose up.
 
 * [localhost:8000/admin](http://localhost:8000/admin) for Django Admin Page
 
-* [localhost:3000](http://localhost:3000) for React App
----
-## Development setup
+* [localhost:8000/tickets](http://localhost:8000/tickets) `GET` for listing available tickets
 
-Install requirements.
-
-    # install poetry package manager
-    pip install poetry
-
-    # go to backend directory and create virtual environment
-    cd backend && poetry install && poetry shell
-
-    # install pre-commit hooks for code quality assurance
-    pre-commit install
-
----
-## Poetry
-Here are some helpful poetry commands in case you need to alter the dependencies.
-
-    poetry install # installing dependencies
-    poetry shell   # run virtual environment shell
-    poetry add     # add a dependency
-    poetry remove  # remove a dependency
-    poetry update  # update dependency list
-    poetry show    # list isntalled dependencies
-
-## Pre-commit
-
-    pre-commit                  # runs pre-commit for staged files only
-    pre-commit run {hook_id}    # run specified hoot
-    pre-commit run --all-files  # run for all files
+* [localhost:8000/orders](http://localhost:8000/orders) `POST` for registering ticket sale
+```json
+{
+    "ticket": 1,
+    "reduced": "true",
+    "quantity": 5
+}
+```
 
 ## Django commands
 
