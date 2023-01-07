@@ -5,9 +5,6 @@ Buy bus tickets using voice recognition
 
 Create the .env file and supply your own secrets and configuration, then simply compose up.
 
-    # create .env file
-    cp backend/.env.example backend/.env
-
     docker compose up
 
 ## Acces the application locally

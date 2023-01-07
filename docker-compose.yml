@@ -1,13 +1,5 @@
 version: '3.8'
 services:
-  react:
-    build: frontend
-    ports:
-      - "3000:3000"
-    restart: always
-    volumes:
-      - "./frontend:/app"
-
   django:
     build: backend
     ports:
@@ -15,5 +7,7 @@ services:
     restart: always
     volumes:
       - "./backend:/app"
-    env_file:
-      - ./backend/.env
+    environment:
+      - DJANGO_SECRET=your_secret_key
+      - DEBUG=False
+      - DJANGO_SETTINGS_MODULE=ticketoo.settings
