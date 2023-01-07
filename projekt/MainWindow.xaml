@@ -1,0 +1,98 @@
+﻿<Window x:Class="projekt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projekt"
+        mc:Ignorable="d"
+        Background="Transparent"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        Height="600"
+        Width="920"
+        WindowStyle="None"
+        >
+    <Border Background="#272537" 
+            CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120">
+                </RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="140"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Ticketoo"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontSize="22"
+                       Foreground="White"
+                       />
+            <ItemsControl x:Name="stackPanel" ItemsSource="{Binding Tickets}" Grid.Row="1" Grid.Column="1" Margin="10" >
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <RadioButton Content="{Binding}" Style="{StaticResource TicketChoiceTheme}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            <TextBox x:Name="previewText" 
+                    Text="Witaj w Ticketoo" 
+                    Margin="0,-50,0,0"
+                    Grid.Column="1"
+                    Style="{StaticResource ModernTextBox}"/>
+            <TextBox x:Name="hearedText" 
+                     Text="Recognition Text" 
+                     Margin="0,50,0,0"
+                     Grid.Column="1"
+                     Style="{StaticResource ModernTextBox}"/>
+            <Border Grid.Column="1"
+                    Grid.Row="2"
+                    CornerRadius="20"
+                    BorderThickness="4"
+                    BorderBrush="#353543"
+                    Background="#353340"
+                    Width="220"
+                    Height="120">
+                <Button x:Name="btnStartStop" 
+                    Foreground="White"
+                    BorderThickness="0"
+                    FontSize="36"
+                    FontWeight="Bold"
+                    Content="START" 
+                    Background="Transparent"
+                    VerticalAlignment="Center" 
+                    Click="btnStartStop_Click"
+                    Width="220"
+                    Height="120"/>
+            </Border>
+            <UniformGrid Grid.Row="1" Columns="2">
+                <UniformGrid Grid.Row="1" Rows="6">
+                    <Label x:Name="zoneLabel" Content="zone:" Style="{StaticResource PropLabel}"/>
+                    <Label x:Name="durationLabel" Content="duration:" Style="{StaticResource PropLabel}"/>
+                    <Label x:Name="reducedLabel" Content="reduced:" Style="{StaticResource PropLabel}"/>
+                    <Label x:Name="quantityLabel" Content="quantity:" Style="{StaticResource PropLabel}"/>
+                    <Label x:Name="ticketChoiceIdLabel" Content="ticketChoiceId:" Style="{StaticResource PropLabel}"/>
+                    <Label x:Name="totalPriceLabel" Content="totalPrice:" Style="{StaticResource PropLabel}"/>
+                </UniformGrid>
+                <UniformGrid Grid.Row="1" Rows="6">
+                    <TextBlock x:Name="zoneText" Style="{StaticResource PropText}"/>
+                    <TextBlock x:Name="durationText" Style="{StaticResource PropText}"/>
+                    <TextBlock x:Name="reducedText" Style="{StaticResource PropText}"/>
+                    <TextBlock x:Name="quantityText" Style="{StaticResource PropText}"/>
+                    <TextBlock x:Name="ticketChoiceIdText" Style="{StaticResource PropText}"/>
+                    <TextBlock x:Name="totalPriceText" Style="{StaticResource PropText}"/>
+                </UniformGrid>
+            </UniformGrid>
+
+        </Grid>
+    </Border>
+</Window>
