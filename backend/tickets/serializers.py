@@ -12,8 +12,6 @@ class TicketSerializer(serializers.ModelSerializer):
 
 
 class TicketSaleSerializer(serializers.ModelSerializer):
-    total_price = serializers.ReadOnlyField()
-
     class Meta:
         model = TicketSale
         fields = "__all__"
