@@ -8,6 +8,6 @@ services:
     volumes:
       - "./backend:/app"
     environment:
-      - DJANGO_SECRET=your_secret_key
-      - DEBUG=False
+      - DJANGO_SECRET_KEY=your_secret_key
+      - DEBUG=True
       - DJANGO_SETTINGS_MODULE=ticketoo.settings
